@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,6 +14,7 @@ part 'sign_in_form_event.dart';
 part 'sign_in_form_state.dart';
 part 'sign_in_form_bloc.freezed.dart';
 
+@injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final IAuthFacade iAuthFacade;
 
@@ -27,17 +29,19 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   ) async* {
     yield* event.map(
       emailChanged: (e) async* {
-        yield state.copyWith(
+        final newState = state.copyWith(
           emailAddress: EmailAddress(e.emailStr),
           resultOption: none(),
         );
+        yield newState;
       },
       
       passwordChanged: (e) async* {
-        yield state.copyWith(
+        final newState = state.copyWith(
           password: Password(e.password),
           resultOption: none(),
         );
+        yield newState;
       },
       
       registerPressed: (e) async* {
@@ -53,10 +57,11 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       },
       
       signInGooglePressed: (e) async* {
-        yield state.copyWith(
+        final newState = state.copyWith(
           isLoading: true,
           resultOption: none(),
         );
+        yield newState;
         final result = await iAuthFacade.signInWithGoogle();
         yield state.copyWith(
           isLoading: false,
