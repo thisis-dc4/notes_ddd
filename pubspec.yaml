@@ -25,6 +25,16 @@ dependencies:
     sdk: flutter
   dartz: ^0.9.1
   freezed_annotation: ^0.7.1
+  flutter_bloc: ^4.0.0
+  firebase_auth: ^0.16.1
+  firebase_core: ^0.4.5
+  google_sign_in: ^4.5.1
+  injectable: ^0.4.0+1
+  get_it: ^4.0.2
+  flutter_spinkit: ^4.1.2+1
+  flushbar: ^1.10.4
+  uuid: ^2.0.4
+  auto_route: ^0.5.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -35,6 +45,9 @@ dev_dependencies:
     sdk: flutter
   freezed: ^0.10.9
   build_runner: ^1.10.0
+  injectable_generator: ^0.4.1
+  lint: ^1.2.0
+  auto_route_generator: ^0.5.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
