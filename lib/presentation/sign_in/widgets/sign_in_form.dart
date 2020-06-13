@@ -1,6 +1,7 @@
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:notes_ddd/application/auth/signin_form/sign_in_form_bloc.dart';
 
 class SignInForm extends StatelessWidget {
@@ -75,8 +76,6 @@ class SignInForm extends StatelessWidget {
                       TextFormField(
                         autocorrect: false,
                         obscureText: true,
-                        textCapitalization: TextCapitalization.none,
-                        enableSuggestions: true,
                         decoration: const InputDecoration(
                           labelText: 'Password',
                           prefixIcon: Icon(Icons.lock),
@@ -127,6 +126,11 @@ class SignInForm extends StatelessWidget {
                         },
                         child: const Text('Sign In with Google'),
                       ),
+                      if (state.isLoading) ...[
+                        const Center(
+                          child: SpinKitPouringHourglass(color: Color(0xFFf44336)),
+                        )
+                      ]
                     ],
                   ),
                 ),

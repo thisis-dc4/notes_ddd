@@ -18,9 +18,12 @@ class SplashScreen extends StatelessWidget {
               .pushReplacementNamed(Routes.signInPage),
         );
       },
-      child: const Center(
-        child: SpinKitPouringHourglass(
-          color: Color(0xFFf44336),
+      child: Center(
+        child: Container(
+          color: Theme.of(context).canvasColor,
+          child: const SpinKitPouringHourglass(
+            color: Color(0xFFf44336),
+          ),
         ),
       ),
     );

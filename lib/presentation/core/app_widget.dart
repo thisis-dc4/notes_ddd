@@ -28,7 +28,7 @@ class AppWidget extends StatelessWidget {
           backgroundColor: Colors.white,
           accentColorBrightness: Brightness.light,
           buttonTheme: ButtonTheme.of(context).copyWith(
-            buttonColor: Color(0xFFf44336),
+            buttonColor: const Color(0xFFf44336),
             textTheme: ButtonTextTheme.primary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
@@ -54,7 +54,7 @@ class AppWidget extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         darkTheme: ThemeData(
-          // backgroundColor: Colors.black,
+          backgroundColor: Colors.black,
           accentColor: const Color(0xFFb0003a),
           accentColorBrightness: Brightness.dark,
           buttonTheme: ButtonTheme.of(context).copyWith(
@@ -82,7 +82,7 @@ class AppWidget extends StatelessWidget {
             ),
           ),
         ),
-        home: Scaffold(
+        home: const Scaffold(
           body: SignInPage(),
         ),
         builder: ExtendedNavigator(router: Router()),
